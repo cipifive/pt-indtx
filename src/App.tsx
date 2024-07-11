@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { AppLayout } from './layouts/AppLayout'
 import { Podcasts } from './pages/Podcasts'
 import { ToastContainer } from 'react-toastify'
+import { Podcast } from './pages/Podcast'
 
 export const App:FC = () => {
 
@@ -16,8 +17,10 @@ export const App:FC = () => {
       ),
     },
     {
-      path: "about",
-      element: <div>About</div>,
+      path: "/podcast/:id",
+      element: (
+        <AppLayout Component={Podcast} />
+      ),
     },
   ]);
 

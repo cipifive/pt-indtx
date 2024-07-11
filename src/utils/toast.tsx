@@ -10,7 +10,7 @@ export const success = (message:string) => (
         draggable: true,
         progress: undefined,
         theme: "light",
-        className: "border border-slate-500 text-black rounded  font-regular text-sm",
+        className: "border border-slate-500 text-black rounded  font-bold text-sm",
         type:'success',
         transition: Slide,
         })
@@ -27,7 +27,7 @@ export const error = (message:string) => (
         progress: undefined,
         theme: "light",
         type:'error',
-        className: "border border-slate-500 text-black rounded  font-regular text-sm",
+        className: "border border-slate-500 text-black rounded  font-bold text-sm",
         transition: Slide,
         })
 )

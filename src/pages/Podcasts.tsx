@@ -7,10 +7,11 @@ import { checkDataStored } from "../utils/helpers"
 import { IPodcast } from "../models/podcasts-model"
 import { PodcastInput } from "../components/Podcasts/PodcastInput"
 import { PodcastFeed } from "../components/Podcasts/PodcastFeed"
+import { INavigationStore } from "../models/zustand-model"
 
 export const Podcasts:FC = ():JSX.Element => {
 
-    const { setIsNavigating } = useNavigationStore()
+    const { setIsNavigating }:INavigationStore = useNavigationStore()
 
     const [podcasts, setPodcasts] = useState<IPodcast[]>([])
 
@@ -24,7 +25,7 @@ export const Podcasts:FC = ():JSX.Element => {
 
     const fetchPodcasts = async () => {
         try {
-            if(!checkDataStored()) {
+            if(!checkDataStored("podcasts-data-stored")) {
                 const response = await getPodcasts(GET_PODCASTS)
                 const { entry } = response.data.feed
                 setPodcasts(entry)
@@ -42,8 +43,8 @@ export const Podcasts:FC = ():JSX.Element => {
     }
 
     useEffect(() => {
-        fetchPodcasts()
         setTimeout(() => {
+            fetchPodcasts()
             setIsNavigating(false)
         },1000)
         

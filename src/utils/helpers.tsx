@@ -1,6 +1,6 @@
-export const checkDataStored = () => {
-    if(localStorage.getItem("podcasts-data-stored")) {
-        let dataStored = JSON.parse(localStorage.getItem("podcasts-data-stored") || '{}')
+export const checkDataStored = (key:string) => {
+    if(localStorage.getItem(key)) {
+        let dataStored = JSON.parse(localStorage.getItem(key) || '{}')
         if('registered_at' in dataStored) {
             let registeredAt:Date = new Date(dataStored['registered_at'])
 

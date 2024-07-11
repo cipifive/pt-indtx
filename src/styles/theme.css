@@ -1,4 +1,5 @@
 @import './loader.css';
+@import './scrollbar.css';
 @import 'react-toastify/dist/ReactToastify.css';
 
 :root {
@@ -6,19 +7,15 @@
 }
 
 
-@font-face {
-    font-family: "regular-font";
-    src: url(/assets/fonts/Beep.ttf);
-}
 
 @font-face {
     font-family: "normal-font";
-    src: url(/assets/fonts/Beep-Light.ttf);
+    src: url(/assets/fonts/kanit.ttf);
 }
 
 @font-face {
     font-family: "bold-font";
-    src: url(/assets/fonts/Beep-Bold.ttf);
+    src: url(/assets/fonts/kanitbold.ttf);
 }
 
 

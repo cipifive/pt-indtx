@@ -18,8 +18,8 @@ export const Navbar:FC = () => {
     }
 
     return (
-        <div className="flex justify-between items-center w-full h-16 pl-4 pr-4  border-b-2 absolute">
-            <span className="font-regular text-blue-titles text-2xl cursor-pointer" onClick={handleGoHome}>Podcaster</span>
+        <div className="flex justify-between items-center w-full h-16 pl-4 pr-4  border-b-2 bg-white z-[1] fixed">
+            <span className="font-bold text-blue-titles text-2xl cursor-pointer" onClick={handleGoHome}>Podcaster</span>
             {
                 isNavigating?
                 <Loader />

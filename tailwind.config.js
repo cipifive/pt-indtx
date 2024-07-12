@@ -28,6 +28,9 @@ export default {
       extend : {
         colors : {
           'blue-titles' : 'var(--blue-titles)'
+        },
+        flex: {
+          '2': '2 2 0%'
         }
       }
       

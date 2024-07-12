@@ -38,6 +38,7 @@ export const Podcasts:FC = ():JSX.Element => {
             }
             
         } catch (err) {
+            console.log(err)
             error('Error al obtener los podcasts')
         }
     }

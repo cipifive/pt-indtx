@@ -1,5 +1,6 @@
 import { ChangeEvent } from "react";
 import { IPodcast } from "./podcasts-model";
+import { IEpisode } from "./episodes-model";
 
 export interface InputProps {
     filteredPodcasts : IPodcast[]
@@ -8,4 +9,21 @@ export interface InputProps {
 
 export interface FeedProps {
     filteredPodcasts : IPodcast[]
+}
+
+export interface PodcastCardProps {
+    episode : IEpisode
+}
+
+export interface PodcastEpisodesProps {
+    episodes : IEpisode[]
+}
+
+export interface EpisodesCountProps {
+    count : number
+}
+
+export interface IErrorBoundaryProps {
+    error: Error
+    resetErrorBoundary: () => void
 }

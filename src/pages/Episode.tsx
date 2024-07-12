@@ -10,7 +10,7 @@ import { PodcastCard } from "../components/Podcast/PodcastCard";
 import { PodcastEpisodes } from "../components/Podcast/PodcastEpisodes/PodcastEpisodes";
 import { IEpisode } from "../models/episodes-model";
 
-export const Podcast:FC = () => {
+export const Episode:FC = () => {
 
     const { setIsNavigating }:INavigationStore = useNavigationStore()
 
@@ -47,7 +47,12 @@ export const Podcast:FC = () => {
     return (
         <div className="flex justify-around h-full mt-16 p-4 ">
             <PodcastCard episode={episodes[0]} />
-            <PodcastEpisodes episodes={episodes} />
+            <div className="flex flex-col justify-between w-8/12 ">
+            <div className="flex flex-col bg-white p-4 w-full mb-2 font-bold text-2xl border border-gray-200 rounded-lg shadow-md lg:max-w-md">
+                <span>title</span>
+                <span>desc</span>
+            </div>
+            </div>
         </div>
     )
 }

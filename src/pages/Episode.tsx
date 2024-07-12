@@ -58,6 +58,10 @@ export const Episode:FC = () => {
             <div className="flex flex-col bg-white p-4 w-full mb-2  border border-gray-200 rounded-lg shadow-md lg:max-w-md">
                 <span className="font-bold text-2xl p-2">{location.state.title}</span>
                 <span dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(location.state.podcast_description) }} className="font-normal p-2"></span>
+                <audio className="w-full rounded" controls>
+                    <source src={location.state.podcast_url} type="audio/mpeg" />
+                    Tu navegador no soporta la etiqueta de audio.
+                </audio>           
             </div>
             </div>
         </div>

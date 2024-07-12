@@ -40,7 +40,7 @@ export const EpisodesTable:FC<PodcastEpisodesProps> = (props):JSX.Element => {
     const handleCellClicked = (params:any) => {
         console.log(params.data)
         setIsNavigating(true)
-        navigate(`/podcast/${id}/episode/${params.data.trackId}`, { state: { description: location.state.description, title: params.data.trackName, podcast_description: params.data.description } })
+        navigate(`/podcast/${id}/episode/${params.data.trackId}`, { state: { description: location.state.description, title: params.data.trackName, podcast_description: params.data.description, podcast_url: params.data.episodeUrl } })
     }
 
     return (

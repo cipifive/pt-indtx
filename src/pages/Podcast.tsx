@@ -23,7 +23,6 @@ export const Podcast:FC = () => {
         try {
             if(!checkDataStored(`${id}-episodes-data-stored`)) {
                 const response = await getPodcastByID(GET_PODCAST_BY_ID(id))
-                console.log(response)
                 const { results } = response.data
                 setEpisodes(results)
                 localStorage.setItem(`${id}-episodes-data-stored`, JSON.stringify({registered_at:new Date(),items:results}))

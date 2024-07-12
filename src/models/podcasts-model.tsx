@@ -93,3 +93,8 @@ export interface IPodcast {
     title : IPodcastLabel
 }
 
+export interface IStoredPodcasts {
+    items : IPodcast[]
+    registered_at : string
+}
+

@@ -13,6 +13,7 @@ export interface FeedProps {
 
 export interface PodcastCardProps {
     episode : IEpisode
+    callback? : () => void
 }
 
 export interface PodcastEpisodesProps {

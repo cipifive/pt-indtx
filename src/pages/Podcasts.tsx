@@ -4,7 +4,7 @@ import { error } from "../utils/toast"
 import { getPodcasts } from "../services/podcast-service"
 import { GET_PODCASTS } from "../constants/endpoints"
 import { checkDataStored } from "../utils/helpers"
-import { IPodcast } from "../models/podcasts-model"
+import { IPodcast, IStoredPodcasts } from "../models/podcasts-model"
 import { PodcastInput } from "../components/Podcasts/PodcastInput"
 import { PodcastFeed } from "../components/Podcasts/PodcastFeed"
 import { INavigationStore } from "../models/zustand-model"
@@ -32,7 +32,7 @@ export const Podcasts:FC = ():JSX.Element => {
                 setFilteredPodcast(entry)
                 localStorage.setItem("podcasts-data-stored", JSON.stringify({registered_at:new Date(),items:entry}))
             } else {
-                let stored_podcasts = JSON.parse(localStorage.getItem("podcasts-data-stored") || '{}')
+                let stored_podcasts:IStoredPodcasts = JSON.parse(localStorage.getItem("podcasts-data-stored") || '{}')
                 setPodcasts(stored_podcasts.items)
                 setFilteredPodcast(stored_podcasts.items)
             }

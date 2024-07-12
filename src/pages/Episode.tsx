@@ -3,12 +3,12 @@ import { useNavigationStore } from "../Zustand/useNavigationStore";
 import { INavigationStore } from "../models/zustand-model";
 import { checkDataStored } from "../utils/helpers";
 import { GET_PODCAST_BY_ID } from "../constants/endpoints";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { error } from "../utils/toast";
 import { getPodcastByID } from "../services/podcast-service";
 import { PodcastCard } from "../components/Podcast/PodcastCard";
-import { PodcastEpisodes } from "../components/Podcast/PodcastEpisodes/PodcastEpisodes";
 import { IEpisode } from "../models/episodes-model";
+import DOMPurify from 'dompurify';
 
 export const Episode:FC = () => {
 
@@ -18,6 +18,13 @@ export const Episode:FC = () => {
 
     const [episodes, setEpisodes] = useState<IEpisode[]>([])
 
+    const location = useLocation()
+
+    const navigate = useNavigate()
+
+    const handleGoBack = () => {
+        navigate(-1)
+    }
 
     const fetchPodcast = async () => {
         try {
@@ -46,11 +53,11 @@ export const Episode:FC = () => {
     
     return (
         <div className="flex justify-around h-full mt-16 p-4 ">
-            <PodcastCard episode={episodes[0]} />
+            <PodcastCard callback={handleGoBack} episode={episodes[0]} />
             <div className="flex flex-col justify-between w-8/12 ">
-            <div className="flex flex-col bg-white p-4 w-full mb-2 font-bold text-2xl border border-gray-200 rounded-lg shadow-md lg:max-w-md">
-                <span>title</span>
-                <span>desc</span>
+            <div className="flex flex-col bg-white p-4 w-full mb-2  border border-gray-200 rounded-lg shadow-md lg:max-w-md">
+                <span className="font-bold text-2xl p-2">{location.state.title}</span>
+                <span dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(location.state.podcast_description) }} className="font-normal p-2"></span>
             </div>
             </div>
         </div>

@@ -5,7 +5,7 @@ Para ejecutar la aplicación en modo desarrollo, se deberá ejecutar el comando 
 Este comando sirve los assets de la aplicación sin minimizar, y ofrece al usuario un entry point en la dirección http://localhost:5173
 
 
-## Production mode
+# Production mode
 
 Para ejecutar la aplicación en modo producción, se deberán ejecutar dos comandos:
 

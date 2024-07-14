@@ -25,7 +25,7 @@ export const PodcastFeed:FC<FeedProps> = (props):JSX.Element => {
             {
                 filteredPodcasts?.map((podcast:IPodcast) => {
                     return (
-                        <div onClick={() => handleGoPodcast(podcast.id.attributes['im:id'],podcast.summary.label)} key={podcast.id.attributes['im:id']} className="h-40 flex items-end justify-center relative border border-gray-200 rounded-lg shadow-md lg:max-w-md p-2 transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+                        <div data-testid="podcast-feed" onClick={() => handleGoPodcast(podcast.id.attributes['im:id'],podcast.summary.label)} key={podcast.id.attributes['im:id']} className="h-40 flex items-end justify-center relative border border-gray-200 rounded-lg shadow-md lg:max-w-md p-2 transition-transform duration-300 transform hover:scale-105 cursor-pointer">
                             <img className="rounded-full top-[-100px] absolute border border-slate-300" src={podcast['im:image'][2].label} />
                             <div className="flex flex-col justify-center items-center">
                                 <span className="font-bold text-sm text-center">{podcast['im:name'].label.toUpperCase()}</span>

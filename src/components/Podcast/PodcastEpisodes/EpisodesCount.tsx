@@ -9,7 +9,7 @@ export const EpisodesCount:FC<EpisodesCountProps>= (props):JSX.Element => {
 
     return (
         <div className="bg-white p-4 w-full mb-2 font-bold text-2xl border border-gray-200 rounded-lg shadow-md lg:max-w-md">
-            <span>Episodes: {count}</span>
+            <span data-testid="episodes-count">Episodes: {count}</span>
         </div>  
     )
 }

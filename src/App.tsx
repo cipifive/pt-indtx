@@ -1,6 +1,6 @@
 import {  FC } from 'react'
 import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { AppLayout } from './layouts/AppLayout'
 import { Podcasts } from './pages/Podcasts'
 import { ToastContainer } from 'react-toastify'
@@ -27,6 +27,10 @@ export const App:FC = () => {
       element: (
         <AppLayout Component={Episode} />
       ),
+    },
+    {
+      path: "*",
+      element: <Navigate to="/" replace />,
     }
   ]);
 

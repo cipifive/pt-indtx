@@ -18,7 +18,7 @@ export const PodcastCard:FC<PodcastCardProps> = (props):JSX.Element => {
             </div>
             <div className="flex flex-col h-1/2">
                 <div className="flex flex-col justify-center items-start border-b-2 flex-1 ">
-                    <span className="font-bold">{episode?.collectionName}</span>
+                    <span data-testid="collection-card" className="font-bold">{episode?.collectionName}</span>
                     <span onClick={callback} className={`${callback? 'cursor-pointer' : ''} font-normal`}>by {episode?.artistName}</span>
                 </div>
                 <div className="flex flex-col justify-center items-start flex-2  ">

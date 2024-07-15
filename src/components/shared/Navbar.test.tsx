@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react'
 import {Navbar} from './Navbar'
-import { BrowserRouter, MemoryRouter, Router, useLocation } from 'react-router-dom'
+import { BrowserRouter, MemoryRouter } from 'react-router-dom'
 
 describe('Navbar', () => {
     

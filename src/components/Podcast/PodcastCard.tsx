@@ -23,7 +23,7 @@ export const PodcastCard:FC<PodcastCardProps> = (props):JSX.Element => {
                 </div>
                 <div className="flex flex-col justify-center items-start flex-2  ">
                     <span className="font-bold">Description</span>
-                    <span className="font-normal">{location?.state?.description.length > 315 ? location?.state?.description.slice(0, 315) + '...' : location?.state?.description}</span>
+                    <span title={location?.state?.description} className="font-normal">{location?.state?.description.length > 275 ? location?.state?.description.slice(0, 275) + '...' : location?.state?.description}</span>
                 </div>
             </div>
             

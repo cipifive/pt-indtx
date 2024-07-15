@@ -1,0 +1,25 @@
+@import './loader.css';
+@import './scrollbar.css';
+@import './tables.css';
+@import "ag-grid-community/styles/ag-grid.css"; 
+@import "ag-grid-community/styles/ag-theme-quartz.css";
+@import 'react-toastify/dist/ReactToastify.css';
+
+:root {
+    --blue-titles: rgb(60, 132, 165);
+}
+
+
+
+@font-face {
+    font-family: "normal-font";
+    src: url(/assets/fonts/kanit.ttf);
+}
+
+@font-face {
+    font-family: "bold-font";
+    src: url(/assets/fonts/kanitbold.ttf);
+}
+
+
+
